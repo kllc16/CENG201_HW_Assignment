@@ -4,6 +4,9 @@ public class Patient {
     String name;
     int severity;
     int age;
+
+    PatientNode head;
+
     //then created its constructor
     public Patient(int id, String name, int severity, int age) {
         this.id = id;
