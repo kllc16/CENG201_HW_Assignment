@@ -1,5 +1,5 @@
 public class PatientList {
-    PatientNode head;
+    private PatientNode head;
 
     PatientList() {
         this.head = null; //head will start empty in first
@@ -18,8 +18,19 @@ public class PatientList {
                 listTraveller = listTraveller.next;//sliding all the way to the end
             }
             listTraveller.next = newPatient;// fresh blood in the end
-            System.out.println("--New Patient Successfully Added");
+            System.out.println("--New Patient Successfully Added--");
 
         }
+    }
+
+    public void printList() {//printing infos
+        PatientNode listTraveller = head;
+
+        do {
+            listTraveller.patient.giveInfo();//calling giveInfo() method for every patient
+            listTraveller = listTraveller.next;
+        } while (listTraveller.next != null);
+        listTraveller.patient.giveInfo();
+
     }
 }
