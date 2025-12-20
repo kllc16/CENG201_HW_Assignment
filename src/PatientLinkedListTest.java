@@ -12,6 +12,11 @@ public class PatientLinkedListTest {
         p.addPatient(p3);
         p.addPatient(p4);
         p.addPatient(p5);
+
+//        System.out.println(p.findPatient(4));
+
+        p.removePatient(3);
+
         p.printList();
     }
 }
