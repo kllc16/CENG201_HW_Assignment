@@ -3,8 +3,8 @@ public class TRNode {
     TreatmentRequest TRequest;
     TRNode next;
 
-    public TRNode(TreatmentRequest TRequest) {
-        this.TRequest = TRequest;
+    public TRNode(TreatmentRequest TreatmentRequest) {
+        this.TRequest = TreatmentRequest;
         this.next = null;
     }
 }
