@@ -19,6 +19,6 @@ public class DischargeRecord {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         String timeStr = sdf.format(new Date(dischargeTime));//same method in task2
 
-        return String.format("PatientID:%d Arrived:%s", patientId, timeStr);
+        return String.format("PatientID:%d Arrived[%s]", patientId, timeStr);
     }
 }
