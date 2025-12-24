@@ -40,7 +40,7 @@ public class HospitalSystem {
         }
     }
 
-    public void addTreatmentRequest(int patientId) {//it is fake method if no extra priority input returns false
+    public void addTreatmentRequest(int patientId) {//it is fake method, if no extra priority input returns isPriority false
         addTreatmentRequest(patientId, false);
     }
 
@@ -52,13 +52,42 @@ public class HospitalSystem {
 
         TreatmentRequest request = new TreatmentRequest(patientID, isPriority);
 
-        if (!isPriority) {//if priority true, patient goes to priorityQueue
+        if (isPriority) {//if priority true, patient goes to priorityQueue
             priorityQueue.enQueue(request);
-            System.out.println("--Patient With ID: " + patientID + " Added To Normal Queue--");
+            System.out.println("--Patient With ID: " + patientID + " Added To Priority Queue--");
         } else {//if priority false, patient goes to normalQueue
             normalQueue.enQueue(request);
-            System.out.println("--Patient With ID: " + patientID + " Added To Priority Queue--");
+            System.out.println("--Patient With ID: " + patientID + " Added To Normal Queue--");
         }
+    }
+
+    public void treatmentPriority() {
+        TreatmentRequest inTRequest = null;//This will be the node of the patient to be treated
+
+        if (priorityQueue.size() > 0) {//We take a priority patient if exist
+            inTRequest = priorityQueue.deQueue();//taking information to temp and removing from queue
+            System.out.println("--Patient With ID:" + inTRequest.patientID + " In Treatment--");
+        } else if (normalQueue.size() > 0) {//then check for a normal patient
+            inTRequest = normalQueue.deQueue();
+            System.out.println("--Patient With ID:" + inTRequest.patientID + " In Treatment--");
+        } else {//if these two empty so there is no more
+            System.out.println("--None Patient Waiting For Treatment--");
+            return;
+        }
+
+        //Finding patient in hashMap
+        Patient inDocPatient = patientHashMap.get(inTRequest.patientID);
+        //PRinting his inforamtions
+        System.out.println();
+        System.out.println("Patient ID: " + inDocPatient.id + ", Name: " + inDocPatient.name + ", Age: " + inDocPatient.age + ", Severity: " + inDocPatient.severity);
+
+        //Creating Discharge Record
+        DischargeRecord dRecord = new DischargeRecord(inTRequest.patientID);
+        dischargeStack.push(dRecord);//then pushing into the stack
+        System.out.println("Patient's Treatment Is Complete And He Has Been Discharged");
+        System.out.println();
+
+
     }
 
 

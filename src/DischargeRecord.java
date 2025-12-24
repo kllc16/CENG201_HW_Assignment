@@ -7,9 +7,8 @@ public class DischargeRecord {
     int patientId;
     long dischargeTime;
 
-    public DischargeRecord() {
-        idBox++;//i prefer an automatic assignment system again
-        this.patientId = idBox;
+    public DischargeRecord(int patientId) {
+        this.patientId = patientId;
 
         this.dischargeTime = System.currentTimeMillis();
     }
