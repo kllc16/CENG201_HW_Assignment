@@ -2,16 +2,24 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TreatmentRequest {
-    private static int idBox;//using static for uniqueness
 
     int patientID;
     long arrivalTime;
+    boolean isPriority;//checking for priority
 
-    public TreatmentRequest() {
-        idBox++;//i prefer an automatic assignment system as i did in task1
-        this.patientID = idBox;
+    public TreatmentRequest(int patientID) {
+        this.patientID = patientID;
+        this.arrivalTime = System.currentTimeMillis();
+
+        this.isPriority = false;//if not priority no need to enter anything else
+    }
+
+    public TreatmentRequest(int patientID,boolean isPriority) {//i prefer overload because only enter true if you have priority
+        this.patientID = patientID;
 
         this.arrivalTime = System.currentTimeMillis();
+
+        this.isPriority = isPriority;
     }
 
     @Override

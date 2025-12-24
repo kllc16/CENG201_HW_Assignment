@@ -4,9 +4,11 @@ public class HospitalSystemTest {
         HospitalSystem HSystem = new HospitalSystem();
 
         Patient p1 = new Patient("Kerem", 3, 20);
-        PatientList pT = new PatientList();
+
 
         HSystem.addPatient(p1);
+
+        HSystem.addTreatmentRequest(1,true);
 
 
 
