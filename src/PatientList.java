@@ -118,7 +118,7 @@ public class PatientList {
 
         travellerNode = head;
         int index = 0;
-        while (travellerNode != null) {
+        while (travellerNode != null) {//adding patients to array and increasing the index
             patientArray[index++] = travellerNode.patient;
             travellerNode = travellerNode.next;
         }

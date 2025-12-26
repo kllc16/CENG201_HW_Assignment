@@ -90,5 +90,40 @@ public class HospitalSystem {
 
     }
 
+    public void sortBySeverity() {//bubble sort
+        Patient[] patientsL = patientList.toArrayConverter();//converting patientList to array
+        int aSize = patientHashMap.size();
+
+
+        if (aSize == 0) {//checking for empty array
+            System.out.println("--No Patients To Sort--");
+            return;
+        }
+
+        for (int i = 0; i < aSize - 1; i++) {
+            for (int j = 0; j < aSize - i - 1; j++) {
+
+                if (patientsL[j].severity < patientsL[j+1].severity) {// if severity smaller it changes and bigger comes upper
+
+                    Patient carrier = patientsL[j];//temp node to make a change
+                    patientsL[j] = patientsL[j+1];//making the change
+                    patientsL[j+1] = carrier;
+
+                }
+
+            }
+        }
+
+        //printing
+        System.out.println("=======================================================");
+        for (Patient p : patientsL) {
+            System.out.println("--Patient ID: " + p.id + ", Age: " + p.age + ", Name: " + p.name + ", Severity: " + p.severity + " --");
+        }
+        System.out.println("=======================================================");
+
+
+
+    }
+
 
 }

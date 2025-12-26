@@ -24,6 +24,8 @@ public class HospitalSystemTest {
         HSystem.treatmentPriority();
         HSystem.treatmentPriority();
 
+        HSystem.sortBySeverity();
+
 
 
     }
