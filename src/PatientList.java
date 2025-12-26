@@ -105,5 +105,28 @@ public class PatientList {
         return null;//if invalid id entered it will return null
     }
 
+    public Patient[] toArrayConverter() {
+
+        int newASize = 0;// new arrays size
+        PatientNode travellerNode = head;
+        while (travellerNode != null) {//travelling the list for size info
+            travellerNode = travellerNode.next;
+            newASize++;
+        }
+
+        Patient[] patientArray = new Patient[newASize];
+
+        travellerNode = head;
+        int index = 0;
+        while (travellerNode != null) {
+            patientArray[index++] = travellerNode.patient;
+            travellerNode = travellerNode.next;
+        }
+
+        return patientArray;
+
+
+    }
+
 
 }

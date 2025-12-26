@@ -7,7 +7,7 @@ public class Patient {
     int severity;
     int age;
 
-    PatientNode head;
+
 
     //then created its constructor
     public Patient(String name, int severity, int age) {
