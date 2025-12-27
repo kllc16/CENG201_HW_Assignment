@@ -32,6 +32,11 @@ public class PatientList {
 
         PatientNode listTraveller = head;
 
+        System.out.println();
+        System.out.println("-----------------------------");
+        System.out.println("Patients int the list");
+        System.out.println("-----------------------------");
+
         do {
             listTraveller.patient.giveInfo();//calling giveInfo() method for every patient
             listTraveller = listTraveller.next;

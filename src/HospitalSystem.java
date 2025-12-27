@@ -61,6 +61,12 @@ public class HospitalSystem {
         }
     }
 
+    public void addDischargeRecord(int id) {
+        //Creating Discharge Record
+        DischargeRecord dRecord = new DischargeRecord(id);
+        dischargeStack.push(dRecord);//then pushing into the stack
+    }
+
     public void treatmentPriority() {
         TreatmentRequest inTRequest = null;//This will be the node of the patient to be treated
 
@@ -78,14 +84,13 @@ public class HospitalSystem {
         //Finding patient in hashMap
         Patient inDocPatient = patientHashMap.get(inTRequest.patientID);
         //PRinting his inforamtions
-        System.out.println();
+
         System.out.println("Patient ID: " + inDocPatient.id + ", Name: " + inDocPatient.name + ", Age: " + inDocPatient.age + ", Severity: " + inDocPatient.severity);
 
-        //Creating Discharge Record
-        DischargeRecord dRecord = new DischargeRecord(inTRequest.patientID);
-        dischargeStack.push(dRecord);//then pushing into the stack
+        addDischargeRecord(inTRequest.patientID);
         System.out.println("Patient's Treatment Is Complete And He Has Been Discharged");
         System.out.println();
+
 
 
     }

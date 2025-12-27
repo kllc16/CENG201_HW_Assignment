@@ -9,7 +9,8 @@ public class DischargeStack {
 
     public void push(DischargeRecord dr) {
         DSNode newDRecord = new DSNode(dr);
-        System.out.println("--New Discharge Record Added--");
+        //System.out.println("--New Discharge Record Added--"); //i make it command for less complicated output in HospitalSystemTest
+        //but u can reactivate it for DischargeStackTest output
         newDRecord.next = top;//new nodes next points to old top
 
         top = newDRecord;//making new discharge record the top
