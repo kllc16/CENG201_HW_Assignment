@@ -125,5 +125,27 @@ public class HospitalSystem {
 
     }
 
+    public void printCurrentSystemState() {
+
+        System.out.println();
+        System.out.println("=".repeat(80));
+        System.out.println(" ".repeat(29) + "Hospital System Status");
+        System.out.println("=".repeat(80));
+
+        System.out.println("--"+ patientHashMap.size() +" Patients Have Been Entered Into The System--");
+        sortBySeverity();
+
+        System.out.println("--"+ priorityQueue.size() +" Patients In Priority Queue--");
+        priorityQueue.printQueue();
+        System.out.println();
+        System.out.println("--"+ normalQueue.size() +" Patients In Normal Queue--");
+        normalQueue.printQueue();
+        System.out.println();
+
+        System.out.println("--"+ dischargeStack.size() +" Patients Have Been Discharged--");
+        dischargeStack.printStack();
+
+    }
+
 
 }

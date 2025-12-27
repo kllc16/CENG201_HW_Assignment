@@ -53,7 +53,7 @@ public class TreatmentQueue {
             System.out.println("!!No Treatment Request In Queue!!");
         } else {
             TRNode queTraveller = front;// if not empty traveller will travel entire queue and will print
-            System.out.println();
+
             System.out.print("Head of Queue <- ");
             while (queTraveller != null) {
                 System.out.print(queTraveller.TRequest + " <- ");

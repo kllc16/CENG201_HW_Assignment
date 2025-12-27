@@ -20,11 +20,11 @@ public class HospitalSystemTest {
         HSystem.addTreatmentRequest(4,true);
 
         HSystem.treatmentPriority();
-        HSystem.treatmentPriority();
-        HSystem.treatmentPriority();
-        HSystem.treatmentPriority();
+        
 
-        HSystem.sortBySeverity();
+
+
+        HSystem.printCurrentSystemState();
 
 
 
